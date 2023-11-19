@@ -1,13 +1,19 @@
-import './index.css';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import { ConfigProvider } from '@/ui-kit';
+
+// TO DO: provide theme to the app
+// import { theme } from '@/ui-kit';
+import { GlobalStyles } from './GlobalStyles';
+import { MariaRouter } from './Router';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ConfigProvider theme={{ hashed: false }}>
+      <GlobalStyles />
+      <MariaRouter />
+    </ConfigProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
