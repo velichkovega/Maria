@@ -1,3 +1,11 @@
+import { ServiceSelect } from '@/modules/serviceSelect/view';
+
+import { Wrapper } from './Main.styled';
+
 export const Main = () => {
-  return <div>Main Page</div>;
+  return (
+    <Wrapper>
+      <ServiceSelect />
+    </Wrapper>
+  );
 };

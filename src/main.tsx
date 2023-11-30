@@ -10,7 +10,31 @@ import { MariaRouter } from './Router';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ConfigProvider theme={{ hashed: false }}>
+    <ConfigProvider
+      theme={{
+        components: {
+          Menu: {
+            colorItemTextSelected: '#000',
+          },
+          Select: {
+            colorBgBase: '#fff',
+            colorBgContainer: 'transparent',
+            colorBgElevated: '#0000004d',
+            colorBorder: '#fff',
+            colorBorderBg: '#fff',
+            optionSelectedBg: '#fff',
+            optionSelectedColor: '#000',
+          },
+        },
+        token: {
+          fontSize: 16,
+          colorBgContainer: 'transparent',
+          colorBgBase: 'rgba(0, 0, 0, 0.3)',
+          borderRadius: 10,
+          colorText: '#fff',
+        },
+      }}
+    >
       <GlobalStyles />
       <MariaRouter />
     </ConfigProvider>
