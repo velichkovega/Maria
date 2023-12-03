@@ -1,19 +1,20 @@
-import { appRoutes } from '@/appRoutes';
+import { getWeatherWithTypeRoute } from '@/appRoutes';
+import { WeatherType } from '@/domain';
 
 import { ButtonNavigation } from './ButtonNavigation';
 
 const link = [
   {
     name: 'Weather',
-    link: appRoutes.weather,
+    link: getWeatherWithTypeRoute(WeatherType.Temperature),
   },
   {
     name: 'Forest fire',
-    link: appRoutes.forestFire,
+    link: 'appRoutes.forestFire',
   },
   {
     name: 'Currency',
-    link: appRoutes.currency,
+    link: 'appRoutes.currency',
   },
 ];
 

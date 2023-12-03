@@ -14,7 +14,7 @@ ReactDOM.render(
       theme={{
         components: {
           Menu: {
-            colorItemTextSelected: '#000',
+            itemSelectedColor: '#000',
           },
           Select: {
             colorBgBase: '#fff',
