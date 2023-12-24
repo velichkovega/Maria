@@ -1,12 +1,27 @@
-import { Divider, Layout, theme, Typography } from '@/ui-kit';
+import { useParams } from 'react-router-dom';
 
+import { WeatherType } from '@/domain';
+import { Divider, Layout, theme } from '@/ui-kit';
+
+import { ForestFire } from './ForestFire';
 import { Menu } from './Menu';
 import { Search } from './Search';
+import { SolarIrradiance } from './SolarIrradiance';
+import { Temperature } from './Temperature';
+
+const contentMap = new Map([
+  [WeatherType.Temperature, <Temperature key={WeatherType.Temperature} />],
+  [WeatherType.SolarIrradiance, <SolarIrradiance key={WeatherType.SolarIrradiance} />],
+  [WeatherType.ForestFire, <ForestFire key={WeatherType.ForestFire} />],
+]);
 
 export const Weather = () => {
   const {
     token: { borderRadius, colorBgBase },
   } = theme.useToken();
+  const { weatherType = WeatherType.Temperature } = useParams<{
+    weatherType: WeatherType;
+  }>();
 
   return (
     <Layout
@@ -28,7 +43,7 @@ export const Weather = () => {
       <Layout.Content style={{ padding: '0 12px', minHeight: 280 }}>
         <Search />
         <Divider style={{ margin: '12px 0', height: '1px', background: '#fff' }} />
-        <Typography.Text>Content</Typography.Text>
+        {contentMap.get(weatherType)}
       </Layout.Content>
     </Layout>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { getWeather } from '@/appRoutes';
+import { getWeatherRoute } from '@/appRoutes';
 import { WeatherType } from '@/domain';
 import { City } from '@/domain';
 import { Select } from '@/ui-kit';
@@ -24,7 +24,7 @@ export const Search = () => {
   };
 
   const handlerSelect = (value: string) => {
-    navigate(getWeather(weatherType, value));
+    navigate(getWeatherRoute(weatherType, value));
   };
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export const Search = () => {
         filterOption={false}
         options={optionsData.map(({ country, name, lat, lon }) => ({
           label: `${name}, ${country}`,
-          value: `${lat}_${lon}`,
+          value: `${lat}_${lon}`.replaceAll('.', ','),
         }))}
         placeholder="Pleas select select place:"
         onSearch={handlerSearch}

@@ -13,5 +13,5 @@ export const Wrapper = styled.div`
 
 export const ModuleContainer = styled.div`
   width: 60vw;
-  height: 70vh;
+  height: 540px;
 `;

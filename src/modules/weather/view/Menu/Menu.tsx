@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { getWeather } from '@/appRoutes';
+import { getWeatherRoute } from '@/appRoutes';
 import { WeatherType } from '@/domain';
 import { Menu as MenuModule, theme } from '@/ui-kit';
 
@@ -10,8 +10,8 @@ const menuItems = [
     label: 'Temperature',
   },
   {
-    key: WeatherType.Wind,
-    label: 'Wind',
+    key: WeatherType.SolarIrradiance,
+    label: 'Solar irradiance',
   },
   {
     key: WeatherType.ForestFire,
@@ -30,7 +30,7 @@ export const Menu = () => {
   const navigate = useNavigate();
 
   const handlerChange = (key: WeatherType) => {
-    navigate(getWeather(key, geo));
+    navigate(getWeatherRoute(key, geo));
   };
 
   return (

@@ -5,7 +5,7 @@ export const appRoutes = {
   weather: '/weather',
 } as const;
 
-export const getWeather = (weatherType: string, geo?: string) => {
+export const getWeatherRoute = (weatherType: string, geo?: string) => {
   return url.join(appRoutes.weather, weatherType, geo ?? '');
 };
 

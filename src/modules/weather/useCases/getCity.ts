@@ -7,6 +7,6 @@ export const createGetCity = (api: Api) => async (city: City['name']) => {
 
     return data as City[];
   } catch (e) {
-    console.log('LOG', e);
+    console.log('error', e);
   }
 };
