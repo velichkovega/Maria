@@ -15,7 +15,7 @@ interface Props {
 export const TemperatureBlock: FC<Props> = ({ main, weather, wind, smallSize }) => {
   return (
     <CurrentTempWrapper>
-      <CurrentTemp smallSize={smallSize}>{Math.round(main.temp)}°C</CurrentTemp>
+      <CurrentTemp small={`${Boolean(smallSize)}`}>{Math.round(main.temp)}°C</CurrentTemp>
       <Typography.Text>Feels like: {Math.round(main.feels_like)}°C</Typography.Text>
       <div>
         <Typography.Text>

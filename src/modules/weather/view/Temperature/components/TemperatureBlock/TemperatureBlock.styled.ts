@@ -5,12 +5,12 @@ interface WindProps {
 }
 
 interface TempSize {
-  smallSize?: boolean;
+  small: string;
 }
 
 export const CurrentTemp = styled.div<TempSize>`
   color: #fff;
-  font-size: ${({ smallSize }) => (smallSize ? '36px' : '96px')};
+  font-size: ${({ small }) => (Boolean(small) ? '36px' : '96px')};
 `;
 
 export const CurrentTempWrapper = styled.div`
